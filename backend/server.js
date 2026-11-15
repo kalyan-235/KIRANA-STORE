@@ -16,8 +16,16 @@ dotenv.config();
 const app = express();
 
 // ── Middleware ──
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://kirana-store-ecru.vercel.app',
+];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  origin: (origin, callback) => {
+    callback(null, !origin || allowedOrigins.includes(origin));
+  },
   credentials: true,
 }));
 app.use(express.json());

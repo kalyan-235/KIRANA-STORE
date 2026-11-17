@@ -23,6 +23,9 @@ const CategoriesSection = () => {
           <span className="line" />
           <h2>Shop by Categories</h2>
           <span className="line" />
+          <Link to="/categories" className="mobile-category-view-all">
+            View All →
+          </Link>
         </div>
 
         {error ? <p role="alert">{error}</p> : null}

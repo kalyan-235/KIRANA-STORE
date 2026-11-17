@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MobileSearchBar from '../MobileSearchBar';
 
 /**
  * CategoryHeader
@@ -12,6 +13,8 @@ import { Link } from 'react-router-dom';
 const CategoryHeader = ({ search, onChange }) => {
   return (
     <>
+      <MobileSearchBar value={search} onChange={onChange} />
+
       {/* ── Page Header ── */}
       <div className="cat-header">
         <div className="cat-header-inner">

@@ -572,3 +572,150 @@
   .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .subcat-topbar { flex-direction: column; align-items: flex-start; }
 }
+
+@media (max-width: 640px) {
+  .subcat-hero {
+    min-height: 132px;
+  }
+
+  .subcat-hero-inner {
+    padding: 22px 18px;
+  }
+
+  .subcat-hero-text h1 {
+    font-size: 24px;
+  }
+
+  .subcat-breadcrumb {
+    display: none;
+  }
+
+  .subcat-body {
+    padding: 12px 10px 24px;
+  }
+
+  .subcat-container {
+    gap: 12px;
+  }
+
+  .subcat-sidebar {
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .sidebar-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 2px 0 8px;
+    scrollbar-width: none;
+  }
+
+  .sidebar-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-item {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .subcat-main {
+    gap: 12px;
+  }
+
+  .subcat-topbar {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .subcat-topbar-left {
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .subcat-topbar-left h2 {
+    font-size: 17px;
+  }
+
+  .product-count {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .subcat-topbar-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .sort-label {
+    display: none;
+  }
+
+  .sort-select {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .product-card {
+    min-width: 0;
+    gap: 7px;
+    padding: 9px;
+    border-radius: 10px;
+  }
+
+  .product-img-wrap {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .product-name {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .product-weight,
+  .product-stock {
+    font-size: 10px;
+  }
+
+  .product-price-row {
+    gap: 5px;
+  }
+
+  .product-original {
+    font-size: 10px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .add-to-cart {
+    margin-top: 0;
+    padding: 8px 5px;
+    font-size: 11px;
+  }
+
+  .product-badge {
+    top: 7px;
+    left: 7px;
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+}

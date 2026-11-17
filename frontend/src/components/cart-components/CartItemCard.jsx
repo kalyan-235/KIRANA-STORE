@@ -67,7 +67,10 @@ const CartItemCard = ({ item, onIncrease, onDecrease, onRemove }) => {
           onClick={() => onRemove(item.key)}
           aria-label={`Remove ${item.name}`}
         >
-          🗑️ Remove
+          <svg className="cart-delete-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M10 11v6m4-6v6M5 7l1 14h12l1-14M9 7V4h6v3" />
+          </svg>
+          <span className="cart-remove-text">Remove</span>
         </button>
 
       </div>

@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/footer.css';
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const [email, setEmail] = useState('');
+  const hideFooterOnMobile = ['/', '/categories', '/cart', '/login', '/register', '/forgot-password']
+    .includes(pathname)
+    || pathname.startsWith('/product/')
+    || pathname === '/about'
+    || pathname === '/contact';
 
   return (
-    <footer className="footer">
+    <footer className={`footer${hideFooterOnMobile ? ' mobile-hidden-footer' : ''}`}>
       <div className="footer-main">
         <div className="footer-container">
 

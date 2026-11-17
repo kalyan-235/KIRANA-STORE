@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/useCart';
 import { useAuth } from '../context/useAuth';
 import '../styles/navbar.css';
@@ -7,10 +7,22 @@ import '../styles/navbar.css';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { itemCount } = useCart();
   const { user, isAdmin, logout } = useAuth();
 
   const isActive = (path) => location.pathname === path;
+  const isProductPage = location.pathname.startsWith('/product/');
+
+  const handleMobileToggle = () => {
+    if (isProductPage) {
+      const historyIndex = window.history.state?.idx;
+      navigate(Number.isInteger(historyIndex) && historyIndex > 0 ? -1 : '/categories');
+      return;
+    }
+
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <header className="header">
@@ -86,12 +98,34 @@ const Navbar = () => {
           {/* Mobile menu toggle */}
           <button
             className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            onClick={handleMobileToggle}
+            aria-label={isProductPage ? 'Go back' : 'Toggle menu'}
+            aria-expanded={!isProductPage && menuOpen}
           >
-            ☰
+            {isProductPage ? '←' : '☰'}
           </button>
         </div>
+      </nav>
+      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+        <Link to="/" className={isActive('/') ? 'active' : ''}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" /></svg>
+          <span>Home</span>
+        </Link>
+        <Link to="/categories" className={location.pathname.startsWith('/categories') ? 'active' : ''}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg>
+          <span>Categories</span>
+        </Link>
+        <Link to="/cart" className={isActive('/cart') ? 'active' : ''}>
+          <span className="mobile-cart-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L22 8H6" /><circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
+            {itemCount > 0 && <span className="mobile-cart-badge">{itemCount}</span>}
+          </span>
+          <span>Cart</span>
+        </Link>
+        <Link to="/login" className={['/login', '/register', '/admin'].some((path) => location.pathname.startsWith(path)) ? 'active' : ''}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+          <span>Account</span>
+        </Link>
       </nav>
     </header>
   );

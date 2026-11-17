@@ -26,6 +26,16 @@
   overflow: hidden;
 }
 
+.contact-hero-bg {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* subtle pattern overlay */
 .contact-hero-overlay {
   position: absolute;
@@ -488,4 +498,142 @@
   .contact-form-block,
   .map-block,
   .hours-block             { padding: 18px; }
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    min-height: 150px;
+    justify-content: flex-start;
+  }
+
+  .contact-hero-bg {
+    display: block;
+    object-position: 70% center;
+  }
+
+  .contact-hero-overlay {
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(20, 91, 40, 0.88), rgba(20, 91, 40, 0.2));
+  }
+
+  .contact-hero-content {
+    z-index: 2;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 20px 16px;
+    text-align: left;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 22px;
+  }
+
+  .contact-hero-content > p {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .contact-breadcrumb {
+    display: none;
+  }
+
+  .contact-container {
+    padding: 0 12px;
+  }
+
+  .contact-cards-section {
+    padding: 12px 0;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contact-info-card {
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .contact-info-card:nth-child(4) {
+    display: none;
+  }
+
+  .ci-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .ci-label {
+    font-size: 10px;
+  }
+
+  .ci-value {
+    font-size: 12px;
+  }
+
+  .contact-body {
+    padding: 8px 0 24px;
+  }
+
+  .contact-layout,
+  .contact-left,
+  .contact-right {
+    gap: 12px;
+  }
+
+  .map-block,
+  .hours-block,
+  .contact-form-block {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .block-title {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .map-wrap iframe {
+    height: 180px;
+  }
+
+  .get-directions-btn {
+    padding: 9px 18px;
+    font-size: 12px;
+  }
+
+  .hours-row {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .hours-note {
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .contact-form {
+    gap: 12px;
+  }
+
+  .form-subtitle {
+    margin: -5px 0 14px;
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 11px;
+    font-size: 13px;
+  }
+
+  .form-submit-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
 }

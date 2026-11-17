@@ -225,6 +225,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .footer.mobile-hidden-footer {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .footer-container {
     grid-template-columns: 1fr;

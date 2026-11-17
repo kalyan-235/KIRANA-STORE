@@ -680,3 +680,146 @@
   .pd-related-grid { grid-template-columns: repeat(2, 1fr); }
   .pd-trust { gap: 6px; }
 }
+
+@media (max-width: 640px) {
+  .pd-breadcrumb {
+    display: none;
+  }
+
+  .pd-main {
+    padding: 8px 10px 20px;
+    background: #fff;
+  }
+
+  .pd-container {
+    gap: 14px;
+    padding: 10px 8px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .pd-images {
+    gap: 10px;
+  }
+
+  .pd-img-badge {
+    top: 8px;
+    left: 8px;
+  }
+
+  .pd-main-img {
+    height: min(74vw, 310px);
+    border: 0;
+    background: #fff;
+  }
+
+  .pd-main-img-el,
+  .pd-thumb img {
+    object-fit: contain;
+  }
+
+  .pd-thumbs {
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 2px 0 4px;
+  }
+
+  .pd-thumb {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 auto;
+  }
+
+  .pd-info {
+    gap: 10px;
+  }
+
+  .pd-name {
+    font-size: 19px;
+  }
+
+  .pd-desc {
+    font-size: 13px;
+  }
+
+  .pd-rating-row {
+    gap: 6px;
+  }
+
+  .pd-stock-badge {
+    margin-left: 0;
+    font-size: 11px;
+  }
+
+  .pd-price {
+    font-size: 28px;
+  }
+
+  .pd-select-row {
+    gap: 8px;
+  }
+
+  .pd-variants {
+    gap: 6px;
+  }
+
+  .pd-variant-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .pd-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .pd-add-cart,
+  .pd-buy-now {
+    min-width: 0;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .pd-trust {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 10px;
+  }
+
+  .trust-item {
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .trust-item > span {
+    font-size: 18px;
+  }
+
+  .trust-item p {
+    font-size: 11px;
+  }
+
+  .trust-item small {
+    font-size: 10px;
+  }
+
+  .pd-related {
+    padding: 20px 12px 28px;
+  }
+
+  .pd-related-header {
+    margin-bottom: 14px;
+  }
+
+  .pd-related-header h2 {
+    font-size: 18px;
+  }
+
+  .pd-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}

@@ -506,3 +506,163 @@
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-btn-group { flex-direction: column; align-items: center; }
 }
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 150px;
+    justify-content: flex-start;
+  }
+
+  .about-hero-bg {
+    object-position: center 45%;
+  }
+
+  .about-hero-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12));
+  }
+
+  .about-hero-content {
+    align-items: flex-start;
+    gap: 6px;
+    padding: 20px 16px;
+    text-align: left;
+  }
+
+  .about-hero-content h1 {
+    font-size: 22px;
+  }
+
+  .about-hero-content > p {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .about-hero-breadcrumb {
+    display: none;
+  }
+
+  .about-section {
+    padding: 20px 0;
+  }
+
+  .about-container {
+    padding: 0 12px;
+  }
+
+  .two-col,
+  .two-col.reverse {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 10px;
+    direction: ltr;
+  }
+
+  .about-text {
+    gap: 8px;
+  }
+
+  .about-text h2 {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .about-text p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .section-tag {
+    align-self: flex-start;
+    margin-bottom: 2px;
+    padding: 3px 9px;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .about-img-wrap {
+    border-radius: 12px;
+  }
+
+  .about-img-wrap img {
+    height: 190px;
+  }
+
+  .about-cta-btn {
+    display: none;
+  }
+
+  .about-stats,
+  .story-section,
+  .why-section,
+  .photos-section,
+  .about-cta-banner {
+    display: none;
+  }
+
+  .mission-section {
+    background: #f7fdf7;
+  }
+
+  .mission-inner {
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .mission-icon,
+  .mission-inner .section-tag {
+    display: none;
+  }
+
+  .mission-inner h2 {
+    color: #1e5c1e;
+    font-size: 20px;
+  }
+
+  .mission-inner > p {
+    max-width: none;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .mission-pillars {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .pillar {
+    position: relative;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 12px 10px 34px;
+    border: 1px solid #e0eee0;
+    background: #fff;
+    text-align: left;
+  }
+
+  .pillar > span {
+    display: none;
+  }
+
+  .pillar::before {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    color: #2d7a2d;
+    content: "✓";
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .pillar > strong {
+    color: #1e5c1e;
+    font-size: 13px;
+  }
+
+  .pillar > p {
+    color: #666;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}

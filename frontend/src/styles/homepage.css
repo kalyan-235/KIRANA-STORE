@@ -5,6 +5,14 @@
   width: 100%;
 }
 
+.mobile-home-search {
+  display: none;
+}
+
+.mobile-category-view-all {
+  display: none;
+}
+
 .section {
   padding: 18px 24px;
 }
@@ -633,5 +641,281 @@
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-home-search {
+    position: sticky;
+    top: 60px;
+    z-index: 95;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 14px;
+    padding: 4px 5px 4px 14px;
+    border: 1px solid #dfe5df;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-home-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #333;
+    font-size: 14px;
+  }
+
+  .mobile-home-search-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border-radius: 50%;
+    background: #267a32;
+  }
+
+  .mobile-home-search-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-width: 2;
+  }
+
+  .section {
+    padding: 20px 14px;
+  }
+
+  .section-title {
+    justify-content: flex-start;
+    gap: 0;
+    margin-bottom: 16px;
+  }
+
+  .section-title h2 {
+    font-size: 19px;
+    white-space: normal;
+  }
+
+  .section-title .line {
+    display: none;
+  }
+
+  .hero {
+    min-height: 238px;
+  }
+
+  .hero-bg-img {
+    object-position: 64% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(10, 55, 24, 0.83), rgba(10, 55, 24, 0.08));
+  }
+
+  .hero-content {
+    justify-content: flex-start;
+    padding: 28px 20px;
+    text-align: left;
+  }
+
+  .hero-text {
+    max-width: 68%;
+  }
+
+  .hero-text h1 {
+    margin-bottom: 8px;
+    font-size: clamp(22px, 6vw, 28px);
+  }
+
+  .hero-sub {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .hero-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .hero-dots {
+    padding-bottom: 12px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .categories-grid .category-card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .categories-section .section-title {
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .categories-section .section-title h2 {
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  .mobile-category-view-all {
+    display: inline-flex;
+    align-items: center;
+    color: #267a32;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .category-card {
+    gap: 6px;
+    border-radius: 10px;
+    padding-bottom: 8px;
+  }
+
+  .cat-img-wrap {
+    height: auto;
+    aspect-ratio: 1.15;
+  }
+
+  .cat-name {
+    font-size: 10px;
+    padding: 0 3px;
+  }
+
+  .center-btn {
+    margin-top: 16px;
+  }
+
+  .categories-section .center-btn {
+    display: none;
+  }
+
+  .outline-btn {
+    padding: 9px 18px;
+    font-size: 12px;
+  }
+
+  .offers-header {
+    margin-bottom: 14px;
+  }
+
+  .offers-header h2 {
+    font-size: 18px;
+  }
+
+  .view-all {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .offers-grid .offer-card:nth-child(n + 4) {
+    display: none;
+  }
+
+  .offer-card {
+    gap: 5px;
+    min-width: 0;
+    padding: 9px 5px;
+    border-radius: 10px;
+  }
+
+  .offer-tag {
+    top: 7px;
+    left: 7px;
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+
+  .offer-img-wrap {
+    height: 68px;
+    margin-top: 14px;
+  }
+
+  .offer-name {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .offer-price {
+    gap: 5px;
+  }
+
+  .original {
+    font-size: 10px;
+  }
+
+  .discounted {
+    font-size: 14px;
+  }
+
+  .add-cart-btn {
+    padding: 6px 3px;
+    font-size: 10px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .feature-card {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+  }
+
+  .feature-title {
+    font-size: 12px;
+  }
+
+  .feature-sub {
+    font-size: 11px;
+  }
+
+  .fresh-banner {
+    min-height: 190px;
+  }
+
+  .fresh-content {
+    padding: 28px 20px;
+  }
+
+  .fresh-text h2 {
+    font-size: 24px;
+  }
+
+  .fresh-text p {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  .fresh-btn {
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }

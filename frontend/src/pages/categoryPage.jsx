@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import CategoryHeader from '../components/category-components/CategoryHeader';
 import CategoryGrid   from '../components/category-components/CategoryGrid';
 import APProductGrid from '../components/all-products-components/APProductGrid';
@@ -7,11 +8,12 @@ import '../styles/categorypage.css';
 import '../styles/all-products.css';
 
 const CategoryPage = () => {
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState('');
-  const [productCategory, setProductCategory] = useState('');
+  const [productCategory, setProductCategory] = useState(() => searchParams.get('category') || '');
   const [sortBy, setSortBy] = useState('default');
   const [productPage, setProductPage] = useState(1);
   const [products, setProducts] = useState([]);

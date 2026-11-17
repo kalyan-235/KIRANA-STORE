@@ -32,7 +32,7 @@ const CategoriesSection = () => {
         <div className="categories-grid">
           {categories.map((cat) => (
             <Link
-              to={`/categories/${cat.id}`}
+              to={`/categories?category=${encodeURIComponent(cat.id)}`}
               key={cat.id}
               className="category-card"
             >
